@@ -378,6 +378,8 @@ SER_STATUS:
 ;
 
 SER_IOCTL:
+        lda     #0
+        jsr     TryToSend
         lda     #SER_ERR_INV_IOCTL      ; We don't support ioclts for now
         ldx     #0 ; return value is char
         rts
